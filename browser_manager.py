@@ -1,3 +1,4 @@
+from pathlib import Path
 import subprocess
 import time
 
@@ -7,7 +8,7 @@ class Browser:
     PORT = 9222
 
     def __init__(self):
-        self.profile = "./browser/profile"
+        self.profile = Path(__file__).parent.parent / "browser" / "profile"
         self.process = None
 
     def start(self):
@@ -18,11 +19,16 @@ class Browser:
                                          f'--remote-debugging-port={self.PORT}',
                                          f'--remote-allow-origins=http://127.0.0.1:{self.PORT}',
                                          "--autoplay-policy=no-user-gesture-required",
-                                         "--start-minimized",
                                          "https://www.youtube.com/"],
                                         stdout=subprocess.DEVNULL,
                                         stderr=subprocess.STDOUT)
-        time.sleep(3)
+        time.sleep(3.6)
+
+        subprocess.run(
+            f"xdotool search --pid {self.process.pid} windowminimize",
+            shell=True
+        )
+
         print("Browser started.")
 
     def stop(self):
