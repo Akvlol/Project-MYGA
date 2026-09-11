@@ -22,10 +22,10 @@ class Browser:
                                          "https://www.youtube.com/"],
                                         stdout=subprocess.DEVNULL,
                                         stderr=subprocess.STDOUT)
-        time.sleep(3.6)
-
+        time.sleep(3)
+        print(self.process.pid)
         subprocess.run(
-            f"xdotool search --pid {self.process.pid} windowminimize",
+            f"kcldotool search --pid {self.process.pid} windowminimize",
             shell=True
         )
 
