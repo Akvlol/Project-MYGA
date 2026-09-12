@@ -1,2 +1,0 @@
-#!/bin/bash
-/home/k/Desktop/PRJs/MYGA/.venv/bin/python /home/k/Desktop/PRJs/MYGA/main.py "$@"
