@@ -108,7 +108,12 @@ class PlaybackManager:
 
             if self.player.is_ended():
                 self.next()
-            time.sleep(0.5)
+                print()
+                current_song_name = self.get_current_song().title.split(" - ")[0]
+                print(f"<playing: {current_song_name} ># " if len(current_song_name) < 36 
+                      else f"<playing: {current_song_name[:33]}... ># ", end="", flush=True)
+
+            time.sleep(1)
     
     # --------------------------------------------------
     # Start playback
@@ -120,9 +125,9 @@ class PlaybackManager:
 
         if InputTool.yes_or_no("Play a random song?"):
             self.get_current_song()
+            self.play()
         else:
             self.jump_to()
-        self.play()
 
         self.running = True
         self.monitor_thread = threading.Thread(
@@ -207,3 +212,9 @@ class PlaybackManager:
             self.player.pause()
         else:
             self.player.play()
+
+    # --------------------------------------------------
+    # Get current song info
+    # --------------------------------------------------
+    def get_current_song_info(self):
+        self.playlist.display_song_info(self.get_current_song().id)

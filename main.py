@@ -6,7 +6,8 @@ from tool.input_tool import InputTool
 # Edit mode
 #------------------------------------------------------------------------------
 def print_menu_edit():
-    print("""Edit mode:
+    print("""
+Edit mode:
 [h] - Display this help menu
 [d] - Display all songs
  |-[D] - Display all songs with URL
@@ -55,14 +56,15 @@ def edit_playlist(playlist):
 # Play mode
 #------------------------------------------------------------------------------
 def print_menu_play():
-    print("""Play mode:
+    print("""
+Play mode:
 [h] - Display this help menu
 [s] - Shuffle the playlist and Start playing
 [z] - Jump to a specific song by index
 [x] - Play/Pause
 [n] - Play the next song
 [p] - Play the previous song
-[d] - Debug
+[g] - Get current song info
 [exit] - Stop & back to the main menu
 """)
 def play_playlist(manager):
@@ -70,7 +72,7 @@ def play_playlist(manager):
     while True:
         song_name = manager.get_current_song().title.split(" - ")[0]
         choice = InputTool.valid_value(f"<playing: {song_name} ># " if len(song_name) < 36 else f"<playing: {song_name[:33]}... ># ",
-                                       ['h', 's', 'z', 'n', 'p', 'x', 'd', 'exit'],
+                                       ['h', 's', 'z', 'n', 'p', 'x', 'g', 'exit'],
                                        "Invalid choice. Press 'h' for help.\n",
                                        continue_if_empty=False)
         if choice == "":
@@ -89,8 +91,8 @@ def play_playlist(manager):
                 manager.next()
             case 'p':
                 manager.previous()
-            case 'd':
-                print(manager.player.get_page_state())
+            case 'g':
+                manager.get_current_song_info()
             case 'exit':
                 manager.stop()
                 print()

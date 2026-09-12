@@ -25,8 +25,21 @@ class Playlist:
                 print(f"[{index}] {song.title}")
         else:
             for index, song in enumerate(self.songs):
-                print(f"[{index}] {song.title} \thttps://www.youtube.com/watch?v={song.id}")
-        print()
+                print(f'''
+                Index: {index}
+                Title: {song.title}
+                Link: https://www.youtube.com/watch?v={song.id}
+''')
+
+    #--------------------------------------------------    
+    # Display song info
+    #--------------------------------------------------
+    def display_song_info(self, song_id):
+        for index, song in enumerate(self.songs):
+            if song.id == song_id:
+                print(f"\n[{index}] {song.title} - https://www.youtube.com/watch?v={song.id}\n")
+                return
+        print("Song not found.")
 
     #--------------------------------------------------
     # Add song
@@ -226,7 +239,7 @@ class Playlist:
 
         #Return if no playlist
         if not os.path.exists(full_path):
-            print(f"No playlist found at {file_path}. Starting with an empty playlist.\n")
+            print(f"\nNo playlist found at {file_path}. Starting with an empty playlist.\n")
             return
 
         #Load from JSON
@@ -234,4 +247,4 @@ class Playlist:
             data = json.load(f)
             self.songs = [Song(song["title"], song["id"]) for song in data.get("songs", [])]
 
-        print(f"Playlist loaded from {file_path}\n")
+        print(f"\nPlaylist loaded from {file_path}\n")
