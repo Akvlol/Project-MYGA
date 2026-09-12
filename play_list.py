@@ -25,11 +25,7 @@ class Playlist:
                 print(f"[{index}] {song.title}")
         else:
             for index, song in enumerate(self.songs):
-                print(f'''
-                Index: {index}
-                Title: {song.title}
-                Link: https://www.youtube.com/watch?v={song.id}
-''')
+                print(f"\n[{index}] {song.title} - https://www.youtube.com/watch?v={song.id}\n")
 
     #--------------------------------------------------    
     # Display song info
@@ -37,7 +33,11 @@ class Playlist:
     def display_song_info(self, song_id):
         for index, song in enumerate(self.songs):
             if song.id == song_id:
-                print(f"\n[{index}] {song.title} - https://www.youtube.com/watch?v={song.id}\n")
+                print(f'''
+                Index: {index}
+                Title: {song.title}
+                Link: https://www.youtube.com/watch?v={song.id}
+''')
                 return
         print("Song not found.")
 
