@@ -33,7 +33,7 @@ Tạo 1 playlist local.
 * Jump to nhảy đến bài tự chọn.
 * Shuffle đảm bảo có thể phát mọi bài hát từ đầu tới cuối.
 
-=> Phát được video **"dành cho trẻ em"**.
+=> Phát được video "dành cho trẻ em".
 
 => Bypass confirmation của video bạo lực / tự hại bằng cách gọi thẳng link phát của video.
 
