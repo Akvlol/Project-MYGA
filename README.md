@@ -73,9 +73,10 @@ Nếu dùng X11 thì cài `xdotool` và thay chữ `kdotool` trong `browser_mana
 
 Chạy `main.py` bằng lệnh python trong môi trường **`.venv`**, vì tao đã làm thế.
 
+Kiểu:
 ```bash
 source .venv/bin/activate
-python main.py
+blablabla/.venv/bin/python blebleble/main.py
 ```
 
 ---
