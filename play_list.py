@@ -34,9 +34,9 @@ class Playlist:
         for index, song in enumerate(self.songs):
             if song.id == song_id:
                 print(f'''
-                Index: {index}
-                Title: {song.title}
-                Link: https://www.youtube.com/watch?v={song.id}
+Index:\t{index}
+Title:\t{song.title}
+Link:\thttps://www.youtube.com/watch?v={song.id}
 ''')
                 return
         print("Song not found.")
