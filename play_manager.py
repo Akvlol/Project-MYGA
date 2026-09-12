@@ -113,7 +113,7 @@ class PlaybackManager:
                 print(f"<playing: {current_song_name} ># " if len(current_song_name) < 36 
                       else f"<playing: {current_song_name[:33]}... ># ", end="", flush=True)
 
-            time.sleep(1)
+            time.sleep(0.5)
     
     # --------------------------------------------------
     # Start playback
