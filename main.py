@@ -68,8 +68,8 @@ def print_menu_play():
 def play_playlist(manager):
     manager.start()
     while True:
-        p = manager.get_current_song()
-        choice = InputTool.valid_value(f"<playing: {p.title}># " if len(p.title) < 36 else f"<playing: {p.title[:30]}...># ",
+        song_name = manager.get_current_song().title.split(" - ")[0]
+        choice = InputTool.valid_value(f"<playing: {song_name}># " if len(song_name) < 36 else f"<playing: {song_name[:33]}...># ",
                                        ['h', 's', 'z', 'n', 'p', 'x', 'd', 'exit'],
                                        "Invalid choice. Press 'h' for help.\n",
                                        continue_if_empty=False)

@@ -45,7 +45,7 @@ class ChromiumDevTools:
 
     def _send(self, method, params=None):
         if self.ws is None:
-            raise RuntimeError("BravePlayer is not connected.")
+            raise RuntimeError("Browser is not connected.")
 
         self.message_id += 1
 
