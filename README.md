@@ -36,7 +36,7 @@ Hệ thống chỉ mới có thể chạy trên ***Linux***
 Chỉ mới test trên ***CachyOS KDE***
 
 ### **Để có thể chạy được ngay:**
-#### 1. Cài Brave browser, hoặc chỉnh hằng ***BROWSER*** trong ***browser_manager.py***
-#### 2. ***(optional)*** Cài *kdotool* nếu dùng KDE Wayland gì đó. Nếu dùng X11 thì cài *xdotool* và thay chữ "*kdotool*" trong *browser_manager.py* thành "*xdotool*"
+1. Cài Brave browser, hoặc chỉnh hằng ***BROWSER*** trong ***browser_manager.py***
+2. ***(Optional)*** Cài *kdotool* nếu dùng KDE Wayland gì đó. Nếu dùng X11 thì cài *xdotool* và thay chữ "*kdotool*" trong *browser_manager.py* thành "*xdotool*"
 => Cái này chủ yếu là phục vụ chức năng tự động minimize browser window khi bắt đầu play
-#### 3. Chạy main.py bằng lệnh python trong môi trường **.venv** , vì tôi đã làm thế 
+3. Chạy main.py bằng lệnh python trong môi trường **.venv** , vì tôi đã làm thế 
