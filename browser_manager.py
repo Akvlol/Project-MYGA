@@ -4,7 +4,7 @@ import time
 
 class Browser:
 
-    BRAVE = "/usr/bin/brave"
+    BROWSER = "/usr/bin/brave"
     PORT = 9222
     WM_CLASS = "ToNhoCauLam_YH"
 
@@ -15,7 +15,7 @@ class Browser:
     def start(self):
         if self.process is not None:
             return
-        self.process = subprocess.Popen([self.BRAVE,
+        self.process = subprocess.Popen([self.BROWSER,
                                          f"--user-data-dir={self.profile}",
                                          f'--remote-debugging-port={self.PORT}',
                                          f'--remote-allow-origins=http://127.0.0.1:{self.PORT}',
