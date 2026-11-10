@@ -1,3 +1,4 @@
 __pycache__/
 tool/__pycache__/
 run
+.vscode/settings.json
